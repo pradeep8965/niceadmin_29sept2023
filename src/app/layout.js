@@ -5,9 +5,11 @@ import '../../public/assets/vendor/quill/quill.snow.css'
 import '../../public/assets/vendor/quill/quill.bubble.css'
 import '../../public/assets/vendor/remixicon/remixicon.css'
 import '../../public/assets/vendor/simple-datatables/style.css'
+import "primereact/resources/themes/lara-light-indigo/theme.css";
 import '../../public/assets/css/style.css'
 import './globals.css'
 
+import { PrimeReactProvider } from 'primereact/api';
 import Script from 'next/script'
 
 export const metadata = {
@@ -37,10 +39,13 @@ const nunito = Nunito({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${openSans.className} ${nunito.className} ${poppins.className}`}> 
-        {children}
-      </body>
-    </html>
+    <PrimeReactProvider>
+        <html lang="en">
+          <body className={`${openSans.className} ${nunito.className} ${poppins.className}`}> 
+            {children}
+          </body>
+        </html>
+    </PrimeReactProvider>
+   
   )
 }

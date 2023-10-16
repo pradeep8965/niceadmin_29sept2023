@@ -333,14 +333,37 @@ let data=[
     
 ];
 export default function page() {
+  /* const [filterText, setFilterText] = React.useState('');
+	const [resetPaginationToggle, setResetPaginationToggle] = React.useState(false);
+	 const filteredItems = fakeUsers.filter(
+		item => item.name && item.name.toLowerCase().includes(filterText.toLowerCase()),
+	); */
+
+	/*const subHeaderComponentMemo = React.useMemo(() => {
+		const handleClear = () => {
+			if (filterText) {
+				setResetPaginationToggle(!resetPaginationToggle);
+				setFilterText('');
+			}
+		};
+
+		return (
+			<FilterComponent onFilter={e => setFilterText(e.target.value)} onClear={handleClear} filterText={filterText} />
+		);
+	}, [filterText, resetPaginationToggle]); */ 
+
   return (
     <section className="section dashboard">
         <div className="row">
             <div className="col-lg-12">
               <div className="card">
                     <div className="card-body">
-                      <h5 className="card-title">A</h5>
-                      <DataTable pagination columns={columns} data={data}/>
+                      <DataTable 
+                      title="Purchase In Progress"
+                        pagination 
+                        columns={columns} 
+                        data={data}
+                      />
                     </div>
               </div>
             </div>
